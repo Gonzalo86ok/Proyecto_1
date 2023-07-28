@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Programacion</title>
+    {% load static %}
+    <link rel = "stylesheet" type="text/css" href = "{% static 'estilos.css' %}">
+</head>
+<body>
+    <h1>Bienvenido</h1><br>
+    <section>
+        {% for elemento in articulos %}
+            <article>
+                <h3>{{elemento.nombre}}</h3><br>
+                <p>
+                    {{elemento.contenido}}
+                </p><br>
+                <img src="{{elemento.imagen}}">
+                <footer>
+                    Autor: {{elemento.autor}}
+                </footer>
+            </article>
+        {% endfor %}
+    </section>
+    <section>
+        <form action = "" method = "post">
+            {% csrf_token %}
+            <h2>Enviame un mensaje</h2>
+
+            {{ form.as_p }}
+
+            <input type = "submit" name ="enviar" value = "Enviar Mensaje">
+            {% if mensaje %}
+            <h2>{{mensaje}}</h2>
+            {% endif %}
+        </form>
+    </section>
+</body>
+</html>
