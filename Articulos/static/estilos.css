@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: steelblue;
+    background-color: rgb(17, 19, 20);
 }
 
 h1{
@@ -32,6 +32,7 @@ article h3{
 
 article img{
     max-width: 90%;
+    border-radius: 10px;
 }
 article footer{
     font-size: 0.7rem;

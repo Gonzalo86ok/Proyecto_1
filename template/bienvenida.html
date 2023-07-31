@@ -7,15 +7,15 @@
     <link rel = "stylesheet" type="text/css" href = "{% static 'estilos.css' %}">
 </head>
 <body>
-    <h1>Bienvenido</h1><br>
+    <h1>Lenguajes</h1><br>
     <section>
         {% for elemento in articulos %}
             <article>
-                <h3>{{elemento.nombre}}</h3><br>
+                <h3>{{elemento.nombre}}</h3>
                 <p>
                     {{elemento.contenido}}
                 </p><br>
-                <img src="{{elemento.imagen}}">
+                <img src="{{elemento.imagen}}"><br>
                 <footer>
                     Autor: {{elemento.autor}}
                 </footer>
@@ -31,7 +31,7 @@
 
             <input type = "submit" name ="enviar" value = "Enviar Mensaje">
             {% if mensaje %}
-            <h2>{{mensaje}}</h2>
+                <h2>{{mensaje}}</h2>
             {% endif %}
         </form>
     </section>
